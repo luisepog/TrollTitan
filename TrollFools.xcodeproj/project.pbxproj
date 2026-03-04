@@ -790,6 +790,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = $DEBUG_BUILD_NUMBER;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"MARKETING_VERSION=\\\"$(MARKETING_VERSION)\\\"",
@@ -814,6 +818,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = $BUILD_NUMBER;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"MARKETING_VERSION=\\\"$(MARKETING_VERSION)\\\"",
 					"CURRENT_PROJECT_VERSION=\\\"$(CURRENT_PROJECT_VERSION)\\\"",
@@ -977,6 +985,10 @@
 					"CURRENT_PROJECT_VERSION=\\\"$(CURRENT_PROJECT_VERSION)\\\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/TrollFools",
 					"$(SRCROOT)/TrollFools/RuntimeInject",
@@ -1030,6 +1042,10 @@
 					"CURRENT_PROJECT_VERSION=\\\"$(CURRENT_PROJECT_VERSION)\\\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/TrollFools",
 					"$(SRCROOT)/TrollFools/RuntimeInject",
