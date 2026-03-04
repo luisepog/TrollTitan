@@ -99,7 +99,6 @@
 		CC8A36792D7EC0B500BE90D3 /* CmdEject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8A36782D7EC0B100BE90D3 /* CmdEject.swift */; };
 		CC8A367B2D7EC5B700BE90D3 /* CmdInject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8A367A2D7EC5B400BE90D3 /* CmdInject.swift */; };
 		CCB6A1172C4A540F000D75B0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB6A1162C4A540F000D75B0 /* CoreServices.framework */; };
-		A7B1000E2D311DA30015940E /* CoreSymbolication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B1000D2D311DA30015940D /* CoreSymbolication.framework */; };
 		CCB6A1192C4A58C7000D75B0 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB6A1182C4A58C7000D75B0 /* OptionView.swift */; };
 		CCB6A11B2C4A6066000D75B0 /* InjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB6A11A2C4A6066000D75B0 /* InjectView.swift */; };
 		CCC564EB2C4BE8320097C300 /* ldid in Resources */ = {isa = PBXBuildFile; fileRef = CCC564E82C4BE8320097C300 /* ldid */; };
@@ -130,7 +129,6 @@
 		A7B100172D311DA300159417 /* task_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100072D311DA300159407 /* task_utils.m */; };
 		A7B100192D311DA300159419 /* thread_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100092D311DA300159409 /* thread_utils.m */; };
 		A7B1001B2D311DA30015941B /* arm64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1000B2D311DA30015940B /* arm64.m */; };
-		A7B1001E2D311DA30015941E /* CoreSymbolication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B1000D2D311DA30015940D /* CoreSymbolication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -268,7 +266,6 @@
 				614C0C4D2D7C2E23007E9184 /* OrderedCollections in Frameworks */,
 				CC0D66342D7F13B1000EADED /* SWCompression in Frameworks */,
 				614C0C472D7C2E12007E9184 /* CoreServices.framework in Frameworks */,
-				A7B1001E2D311DA30015941E /* CoreSymbolication.framework in Frameworks */,
 				614C0C4F2D7C2E28007E9184 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +279,6 @@
 				61946B262D2FD8AB009E0AC4 /* OrderedCollections in Frameworks */,
 				61EFA36B2D3026D400159442 /* CocoaLumberjackSwiftLogBackend in Frameworks */,
 				CCB6A1172C4A540F000D75B0 /* CoreServices.framework in Frameworks */,
-				A7B1000E2D311DA30015940E /* CoreSymbolication.framework in Frameworks */,
 				CC1548FE2C4AADBB00A4173E /* MachOKitC in Frameworks */,
 				61EFA3692D3026D400159442 /* CocoaLumberjackSwift in Frameworks */,
 				CC8061712E71636500B1AA3E /* DpkgVersion in Frameworks */,
@@ -446,7 +442,6 @@
 			isa = PBXGroup;
 			children = (
 				CCB6A1162C4A540F000D75B0 /* CoreServices.framework */,
-				A7B1000D2D311DA30015940D /* CoreSymbolication.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -790,10 +785,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = $DEBUG_BUILD_NUMBER;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/System/Library/PrivateFrameworks",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"MARKETING_VERSION=\\\"$(MARKETING_VERSION)\\\"",
@@ -818,10 +809,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = $BUILD_NUMBER;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/System/Library/PrivateFrameworks",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"MARKETING_VERSION=\\\"$(MARKETING_VERSION)\\\"",
 					"CURRENT_PROJECT_VERSION=\\\"$(CURRENT_PROJECT_VERSION)\\\"",
@@ -985,10 +972,6 @@
 					"CURRENT_PROJECT_VERSION=\\\"$(CURRENT_PROJECT_VERSION)\\\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/System/Library/PrivateFrameworks",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/TrollFools",
 					"$(SRCROOT)/TrollFools/RuntimeInject",
@@ -1042,10 +1025,6 @@
 					"CURRENT_PROJECT_VERSION=\\\"$(CURRENT_PROJECT_VERSION)\\\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/System/Library/PrivateFrameworks",
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/TrollFools",
 					"$(SRCROOT)/TrollFools/RuntimeInject",
