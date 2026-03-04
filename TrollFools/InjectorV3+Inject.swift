@@ -88,4 +88,21 @@ extension InjectorV3 {
             DDLogInfo("Injected \(dylibURL.lastPathComponent) into \(processName)", ddlog: logger)
         }
     }
+
+    // MARK: - Load command name (used by Eject when removing legacy Mach-O load commands)
+
+    func loadCommandNameOfAsset(_ assetURL: URL) throws -> String {
+        var name = "@rpath/"
+        if checkIsBundle(assetURL) {
+            precondition(assetURL.pathExtension == "framework", "Invalid framework: \(assetURL.path)")
+            let machO = try locateExecutableInBundle(assetURL)
+            name += machO.pathComponents.suffix(2).joined(separator: "/")
+            precondition(name.contains(".framework/"), "Invalid framework name: \(name)")
+        } else {
+            precondition(assetURL.pathExtension == "dylib", "Invalid dylib: \(assetURL.path)")
+            name += assetURL.lastPathComponent
+            precondition(name.hasSuffix(".dylib"), "Invalid dylib name: \(name)")
+        }
+        return name
+    }
 }
