@@ -99,6 +99,12 @@ struct OptionView: View {
                 Spacer()
             }
 
+            Text(NSLocalizedString("Target app must be running to inject.", comment: "Runtime inject notice"))
+                .font(.caption)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+
             if verticalSizeClass == .regular {
                 Button {
                     isSettingsPresented = true

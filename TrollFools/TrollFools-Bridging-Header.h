@@ -5,6 +5,7 @@
 #import "LSApplicationProxy.h"
 #import "LSApplicationWorkspace.h"
 #import "StripedTextTableViewController.h"
+#import "RuntimeInject/InjectHelper.h"
 
 #import <UIKit/UIKit.h>
 

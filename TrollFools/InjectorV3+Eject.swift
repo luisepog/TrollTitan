@@ -67,8 +67,9 @@ extension InjectorV3 {
 
         let targetURLs = try collectModifiedMachOs()
         guard !targetURLs.isEmpty else {
-            DDLogError("Unable to find any modified Mach-Os", ddlog: logger)
-            throw Error.generic(NSLocalizedString("No eligible framework found.", comment: ""))
+            // Runtime-only (TrollTitan): no Mach-O load commands to remove; eject is a no-op for dylibs
+            DDLogInfo("No modified Mach-Os (runtime inject only); skipping dylib eject", ddlog: logger)
+            return
         }
 
         DDLogInfo("Modified Mach-Os \(targetURLs.map { $0.path })", ddlog: logger)

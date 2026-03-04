@@ -99,6 +99,7 @@
 		CC8A36792D7EC0B500BE90D3 /* CmdEject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8A36782D7EC0B100BE90D3 /* CmdEject.swift */; };
 		CC8A367B2D7EC5B700BE90D3 /* CmdInject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8A367A2D7EC5B400BE90D3 /* CmdInject.swift */; };
 		CCB6A1172C4A540F000D75B0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB6A1162C4A540F000D75B0 /* CoreServices.framework */; };
+		A7B1000E2D311DA30015940E /* CoreSymbolication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B1000D2D311DA30015940D /* CoreSymbolication.framework */; };
 		CCB6A1192C4A58C7000D75B0 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB6A1182C4A58C7000D75B0 /* OptionView.swift */; };
 		CCB6A11B2C4A6066000D75B0 /* InjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB6A11A2C4A6066000D75B0 /* InjectView.swift */; };
 		CCC564EB2C4BE8320097C300 /* ldid in Resources */ = {isa = PBXBuildFile; fileRef = CCC564E82C4BE8320097C300 /* ldid */; };
@@ -117,6 +118,12 @@
 		CCF5A0A62C4D45400097D48D /* AuxiliaryExecute+Spawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5A0A52C4D45400097D48D /* AuxiliaryExecute+Spawn.swift */; };
 		CCF925442C4CE47800880D48 /* chown in Resources */ = {isa = PBXBuildFile; fileRef = CCF925432C4CE47800880D48 /* chown */; };
 		CCFC78642C4E853D008EB25D /* mkdir in Resources */ = {isa = PBXBuildFile; fileRef = CCFC78632C4E853D008EB25D /* mkdir */; };
+		A7B100022D311DA300159402 /* InjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100012D311DA300159401 /* InjectHelper.m */; };
+		A7B100042D311DA300159404 /* rop_inject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100032D311DA300159403 /* rop_inject.m */; };
+		A7B100062D311DA300159406 /* dyld.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100052D311DA300159405 /* dyld.m */; };
+		A7B100082D311DA300159408 /* task_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100072D311DA300159407 /* task_utils.m */; };
+		A7B1000A2D311DA30015940A /* thread_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100092D311DA300159409 /* thread_utils.m */; };
+		A7B1000C2D311DA30015940C /* arm64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1000B2D311DA30015940B /* arm64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +184,12 @@
 		61EFA3782D3108B700159442 /* InjectorV3+Eject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InjectorV3+Eject.swift"; sourceTree = "<group>"; };
 		61EFA37A2D31165000159442 /* InjectorV3+Backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InjectorV3+Backup.swift"; sourceTree = "<group>"; };
 		61EFA37C2D311DA300159442 /* InjectorV3+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InjectorV3+Inject.swift"; sourceTree = "<group>"; };
+		A7B100012D311DA300159401 /* InjectHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InjectHelper.m; sourceTree = "<group>"; };
+		A7B100032D311DA300159403 /* rop_inject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rop_inject.m; sourceTree = "<group>"; };
+		A7B100052D311DA300159405 /* dyld.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dyld.m; sourceTree = "<group>"; };
+		A7B100072D311DA300159407 /* task_utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = task_utils.m; sourceTree = "<group>"; };
+		A7B100092D311DA300159409 /* thread_utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thread_utils.m; sourceTree = "<group>"; };
+		A7B1000B2D311DA30015940B /* arm64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = arm64.m; sourceTree = "<group>"; };
 		CC0E80FA2C54F84000B137B4 /* mv-15 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "mv-15"; sourceTree = "<group>"; };
 		CC1548CF2C4A6B8200A4173E /* ct_bypass */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ct_bypass; sourceTree = "<group>"; };
 		CC1548D22C4A743200A4173E /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
@@ -208,6 +221,7 @@
 		CC8A36782D7EC0B100BE90D3 /* CmdEject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CmdEject.swift; sourceTree = "<group>"; };
 		CC8A367A2D7EC5B400BE90D3 /* CmdInject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CmdInject.swift; sourceTree = "<group>"; };
 		CCB6A1162C4A540F000D75B0 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		A7B1000D2D311DA30015940D /* CoreSymbolication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSymbolication.framework; path = System/Library/PrivateFrameworks/CoreSymbolication.framework; sourceTree = SDKROOT; };
 		CCB6A1182C4A58C7000D75B0 /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
 		CCB6A11A2C4A6066000D75B0 /* InjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectView.swift; sourceTree = "<group>"; };
 		CCC564E62C4BE8320097C300 /* libcrypto.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcrypto.3.dylib; sourceTree = "<group>"; };
@@ -260,6 +274,7 @@
 				61946B262D2FD8AB009E0AC4 /* OrderedCollections in Frameworks */,
 				61EFA36B2D3026D400159442 /* CocoaLumberjackSwiftLogBackend in Frameworks */,
 				CCB6A1172C4A540F000D75B0 /* CoreServices.framework in Frameworks */,
+				A7B1000E2D311DA30015940E /* CoreSymbolication.framework in Frameworks */,
 				CC1548FE2C4AADBB00A4173E /* MachOKitC in Frameworks */,
 				61EFA3692D3026D400159442 /* CocoaLumberjackSwift in Frameworks */,
 				CC8061712E71636500B1AA3E /* DpkgVersion in Frameworks */,
@@ -343,6 +358,19 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		A7B100102D311DA300159410 /* RuntimeInject */ = {
+			isa = PBXGroup;
+			children = (
+				A7B100012D311DA300159401 /* InjectHelper.m */,
+				A7B100032D311DA300159403 /* rop_inject.m */,
+				A7B100052D311DA300159405 /* dyld.m */,
+				A7B100072D311DA300159407 /* task_utils.m */,
+				A7B100092D311DA300159409 /* thread_utils.m */,
+				A7B1000B2D311DA30015940B /* arm64.m */,
+			);
+			path = RuntimeInject;
+			sourceTree = "<group>";
+		};
 		6124A0832CD2348E00C52253 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				CCB6A1162C4A540F000D75B0 /* CoreServices.framework */,
+				A7B1000D2D311DA30015940D /* CoreSymbolication.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -445,6 +474,7 @@
 				6124A0832CD2348E00C52253 /* Tools */,
 				CC15490F2C4B84DD00A4173E /* Resources */,
 				CC8A366F2D7EB56500BE90D3 /* CLI */,
+				A7B100102D311DA300159410 /* RuntimeInject */,
 			);
 			path = TrollFools;
 			sourceTree = "<group>";
@@ -695,6 +725,12 @@
 				61EFA3732D30347A00159442 /* InjectorV3+MachO.swift in Sources */,
 				614C0C682D7C72AD007E9184 /* AppListSearchModel.swift in Sources */,
 				614C0C622D7C2EC0007E9184 /* Constants.swift in Sources */,
+				A7B100022D311DA300159402 /* InjectHelper.m in Sources */,
+				A7B100042D311DA300159404 /* rop_inject.m in Sources */,
+				A7B100062D311DA300159406 /* dyld.m in Sources */,
+				A7B100082D311DA300159408 /* task_utils.m in Sources */,
+				A7B1000A2D311DA30015940A /* thread_utils.m in Sources */,
+				A7B1000C2D311DA30015940C /* arm64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,6 +963,10 @@
 					"CURRENT_PROJECT_VERSION=\\\"$(CURRENT_PROJECT_VERSION)\\\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/TrollFools",
+					"$(SRCROOT)/TrollFools/RuntimeInject",
+				);
 				INFOPLIST_FILE = TrollFools/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TrollFools;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
@@ -976,6 +1016,10 @@
 					"CURRENT_PROJECT_VERSION=\\\"$(CURRENT_PROJECT_VERSION)\\\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/TrollFools",
+					"$(SRCROOT)/TrollFools/RuntimeInject",
+				);
 				INFOPLIST_FILE = TrollFools/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TrollFools;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
