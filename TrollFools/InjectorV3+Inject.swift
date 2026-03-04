@@ -55,7 +55,7 @@ extension InjectorV3 {
         }
     }
 
-    /// Runtime inject: copy dylib to Application folder, CoreTrust bypass, then ROP inject into running process.
+    /// Runtime inject: copy dylib to Application folder, CoreTrust bypass, chmod, then ROP inject via root helper (like Titanium).
     fileprivate func injectDylibsRuntime(_ assetURLs: [URL]) throws {
         guard !assetURLs.isEmpty else { return }
 
@@ -75,18 +75,46 @@ extension InjectorV3 {
             let injectURL = URL(fileURLWithPath: "\(appRoot)/\(tempName)")
 
             try cmdCopy(from: dylibURL, to: injectURL, clone: false, overwrite: true)
-            defer { try? cmdRemove(injectURL, recursively: false) }
-
             try cmdCoreTrustBypass(injectURL, teamID: teamID)
             try cmdChangeOwnerToInstalld(injectURL, recursively: false)
+            try cmdChmod(injectURL, mode: 0o755)
 
-            let ok = TrollTitanInjectDylibIntoProcess(processName, injectURL.path)
+            let ok: Bool
+            if let cliURL = Self.runtimeInjectCLIURL(), FileManager.default.isExecutableFile(atPath: cliURL.path) {
+                ok = try runRuntimeInjectViaRootHelper(cliURL: cliURL, processName: processName, dylibPath: injectURL.path)
+            } else {
+                ok = TrollTitanInjectDylibIntoProcess(processName, injectURL.path)
+            }
+
             if !ok {
                 DDLogError("Runtime inject failed for \(dylibURL.lastPathComponent) into \(processName)", ddlog: logger)
-                throw Error.generic(NSLocalizedString("Runtime injection failed. Make sure the app is running and you have the required entitlements (TrollStore).", comment: ""))
+                throw Error.generic(NSLocalizedString("Runtime injection failed. Make sure the app is running and installed via TrollStore.", comment: ""))
             }
             DDLogInfo("Injected \(dylibURL.lastPathComponent) into \(processName)", ddlog: logger)
         }
+    }
+
+    /// Path to trollfoolscli (installed at /usr/local/bin by Theos when packaged).
+    private static func runtimeInjectCLIURL() -> URL? {
+        let path = "/usr/local/bin/trollfoolscli"
+        if FileManager.default.isExecutableFile(atPath: path) { return URL(fileURLWithPath: path) }
+        if let url = Bundle.main.url(forResource: "trollfoolscli", withExtension: nil),
+           FileManager.default.isExecutableFile(atPath: url.path) { return url }
+        return nil
+    }
+
+    /// Spawn trollfoolscli with root persona to run runtime-inject (task_for_pid works as root).
+    private func runRuntimeInjectViaRootHelper(cliURL: URL, processName: String, dylibPath: String) throws -> Bool {
+        let receipt = try Execute.rootSpawnWithOutputs(
+            binary: cliURL.path,
+            arguments: ["runtime-inject", processName, dylibPath],
+            ddlog: logger
+        )
+        if case .exit(let code) = receipt.terminationReason, code == EXIT_SUCCESS {
+            return true
+        }
+        DDLogWarn("runtime-inject helper exited: \(receipt.terminationReason)", ddlog: logger)
+        return false
     }
 
     // MARK: - Load command name (used by Eject when removing legacy Mach-O load commands)

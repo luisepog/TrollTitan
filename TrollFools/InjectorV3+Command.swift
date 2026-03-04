@@ -167,6 +167,20 @@ extension InjectorV3 {
         }
     }
 
+    // MARK: - chmod
+
+    func cmdChmod(_ target: URL, mode: Int32) throws {
+        if isPrivileged {
+            try? FileManager.default.setAttributes([.posixPermissions: NSNumber(value: mode)], ofItemAtPath: target.path)
+            return
+        }
+        let modeStr = String(mode, radix: 8)
+        let retCode = try Execute.rootSpawn(binary: "/bin/chmod", arguments: [modeStr, target.path], ddlog: logger)
+        guard case let .exit(code) = retCode, code == EXIT_SUCCESS else {
+            try throwCommandFailure("chmod", reason: retCode)
+        }
+    }
+
     // MARK: - mkdir
 
     fileprivate static let mkdirBinaryURL = findExecutable("mkdir")
