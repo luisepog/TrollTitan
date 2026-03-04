@@ -124,6 +124,13 @@
 		A7B100082D311DA300159408 /* task_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100072D311DA300159407 /* task_utils.m */; };
 		A7B1000A2D311DA30015940A /* thread_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100092D311DA300159409 /* thread_utils.m */; };
 		A7B1000C2D311DA30015940C /* arm64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1000B2D311DA30015940B /* arm64.m */; };
+		A7B100112D311DA300159411 /* InjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100012D311DA300159401 /* InjectHelper.m */; };
+		A7B100132D311DA300159413 /* rop_inject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100032D311DA300159403 /* rop_inject.m */; };
+		A7B100152D311DA300159415 /* dyld.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100052D311DA300159405 /* dyld.m */; };
+		A7B100172D311DA300159417 /* task_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100072D311DA300159407 /* task_utils.m */; };
+		A7B100192D311DA300159419 /* thread_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B100092D311DA300159409 /* thread_utils.m */; };
+		A7B1001B2D311DA30015941B /* arm64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1000B2D311DA30015940B /* arm64.m */; };
+		A7B1001E2D311DA30015941E /* CoreSymbolication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B1000D2D311DA30015940D /* CoreSymbolication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +268,7 @@
 				614C0C4D2D7C2E23007E9184 /* OrderedCollections in Frameworks */,
 				CC0D66342D7F13B1000EADED /* SWCompression in Frameworks */,
 				614C0C472D7C2E12007E9184 /* CoreServices.framework in Frameworks */,
+				A7B1001E2D311DA30015941E /* CoreSymbolication.framework in Frameworks */,
 				614C0C4F2D7C2E28007E9184 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,6 +680,12 @@
 				614C0C5D2D7C2E98007E9184 /* InjectorV3+Preprocess.swift in Sources */,
 				614C0C5E2D7C2E98007E9184 /* InjectorV3+Error.swift in Sources */,
 				614C0C5F2D7C2E98007E9184 /* InjectorV3.swift in Sources */,
+				A7B100112D311DA300159411 /* InjectHelper.m in Sources */,
+				A7B100132D311DA300159413 /* rop_inject.m in Sources */,
+				A7B100152D311DA300159415 /* dyld.m in Sources */,
+				A7B100172D311DA300159417 /* task_utils.m in Sources */,
+				A7B100192D311DA300159419 /* thread_utils.m in Sources */,
+				A7B1001B2D311DA30015941B /* arm64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
